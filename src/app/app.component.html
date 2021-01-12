@@ -1,6 +1,8 @@
 <h2>Auth0 - Angular Sample App</h2>
 
-<button (click)="authService.loginWithRedirect()">Login</button>
+<button (click)="authService.loginWithRedirect({
+redirect_uri: '/asdf/ddffdf'
+})">Login</button>
 
 <button (click)="authService.logout()">Logout</button>
 

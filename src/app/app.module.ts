@@ -19,8 +19,7 @@ console.log('the appName is: ', appName);
     AuthModule.forRoot({
       domain: environment[appName].auth0_domain,
       clientId: environment[appName].auth0_client_id,
-      audience: environment[appName].auth0_audience,
-      redirectUri: environment[appName].auth0_redirect_uri
+      audience: environment[appName].auth0_audience
     })
   ],
   providers: [],
