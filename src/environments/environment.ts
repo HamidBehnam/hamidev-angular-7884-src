@@ -3,7 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  "hamidev-nodejs-8324-src": {
+    auth0_domain: "dev-2nbjdzvu.us.auth0.com",
+    auth0_client_id: "79qkAdchT3jEEXtwnw1Ot5D0zD3TYYV6",
+    auth0_audience: "https://dev.hamidbehnam.com/nodejs/8324/"
+  }
 };
 
 /*
