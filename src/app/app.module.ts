@@ -9,7 +9,8 @@ const urlSearchParams = new URLSearchParams(window.location.search);
 const appName = urlSearchParams.get('appName');
 
 if (!appName) {
-  window.location.search = 'appName=hamidev-nodejs-8324-src';
+  urlSearchParams.set('appName', 'hamidev-nodejs-8324-src');
+  window.location.search = urlSearchParams.toString();
 }
 
 console.log('the appName is: ', appName);
