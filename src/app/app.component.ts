@@ -19,7 +19,7 @@ export class AppComponent {
       console.log(user);
     });
 
-    console.log(window.location);
+    console.log(window.location.origin + window.location.pathname);
 
     this.redirectLoginOptions = {
       redirect_uri: window.location.origin + window.location.pathname,
