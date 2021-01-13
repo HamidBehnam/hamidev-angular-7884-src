@@ -8,6 +8,10 @@ import {environment} from "../environments/environment";
 const urlSearchParams = new URLSearchParams(window.location.search);
 const appName = urlSearchParams.get('appName');
 
+if (!appName) {
+  window.location.search = 'appName=hamidev-nodejs-8324-src';
+}
+
 console.log('the appName is: ', appName);
 
 @NgModule({
