@@ -1,8 +1,14 @@
+import { domain, clientId, audience, apiUri } from '../../auth_config.json';
+
 export const environment = {
   production: true,
-  "hamidev-nodejs-8324-src": {
-    auth0_domain: "dev-2nbjdzvu.us.auth0.com",
-    auth0_client_id: "79qkAdchT3jEEXtwnw1Ot5D0zD3TYYV6",
-    auth0_audience: "https://dev.hamidbehnam.com/nodejs/8324/"
-  }
+  auth: {
+    domain,
+    clientId,
+    audience,
+    redirectUri: window.location.origin,
+  },
+  httpInterceptor: {
+    allowedList: [`${apiUri}/*`],
+  },
 };
