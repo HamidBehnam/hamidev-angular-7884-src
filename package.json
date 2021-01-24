@@ -1,5 +1,5 @@
 {
-  "name": "login-demo",
+  "name": "hamidev-angular-src",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -8,13 +8,9 @@
     "test": "ng test",
     "test:ci": "ng test --no-watch --no-progress --browsers=ChromeHeadlessCI",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "server:app": "node server.js",
-    "server:api": "node api-server.js",
+    "e2e": "ng e2e"
     "dev": "npm-run-all --parallel start server:api",
-    "prod": "npm-run-all --parallel server:app server:api",
-    "postbuild": "npm run copy:server",
-    "copy:server": "cp server.js auth_config.json dist/login-demo"
+    "prod": "npm-run-all --parallel server:app server:api"
   },
   "private": true,
   "dependencies": {
