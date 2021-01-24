@@ -22,11 +22,11 @@ export class NavBarComponent implements OnInit {
 
   loginWithRedirect() {
     this.auth.loginWithRedirect({
-      redirect_uri: window.location.origin + window.location.pathname
+      redirect_uri: this.doc.location.origin + this.doc.location.pathname
     });
   }
 
   logout() {
-    this.auth.logout({ returnTo: this.doc.location.origin });
+    this.auth.logout({ returnTo: this.doc.location.origin + this.doc.location.pathname });
   }
 }
