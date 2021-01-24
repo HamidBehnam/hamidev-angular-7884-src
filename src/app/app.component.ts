@@ -23,7 +23,7 @@ export class AppComponent {
   loginWithRedirect(): any {
     console.log(window.location.origin + window.location.pathname);
 
-    const thePath = window.location.pathname + '?' + window.location.search;
+    const thePath = window.location.pathname + window.location.search;
 
     console.log('the path is: ', thePath);
 
