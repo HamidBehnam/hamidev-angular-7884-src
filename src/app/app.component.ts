@@ -18,16 +18,20 @@ export class AppComponent {
     this.authService.user$.subscribe(user => {
       console.log(user);
     });
+  }
 
+  loginWithRedirect(): any {
     console.log(window.location.origin + window.location.pathname);
 
-    this.redirectLoginOptions = {
-      redirect_uri: window.location.origin + window.location.pathname,
+    const thePath = window.location.pathname + '?' + window.location.search;
+
+    console.log('the path is: ', thePath);
+
+    this.authService.loginWithRedirect({
       appState: {
-        theName: "Hamid",
-        theCode: 234
+        target: thePath
       }
-    };
+    });
   }
 
   async getAccessToken() {
