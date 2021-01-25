@@ -31,7 +31,11 @@ export class AppComponent {
 
     console.log('the path is: ', thePath);
 
-    this.authService.loginWithRedirect();
+    this.authService.loginWithRedirect({
+      appState: {
+        target: this.doc.location.pathname + this.doc.location.search
+      }
+    });
   }
 
   logout(): any {
