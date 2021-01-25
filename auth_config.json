@@ -1,7 +1,0 @@
-{
-  "domain": "dev-2nbjdzvu.us.auth0.com",
-  "clientId": "79qkAdchT3jEEXtwnw1Ot5D0zD3TYYV6",
-  "audience": "https://dev.hamidbehnam.com/nodejs/8324/",
-  "apiUri": "http://localhost:3001",
-  "appUri": "http://localhost:4200"
-}
