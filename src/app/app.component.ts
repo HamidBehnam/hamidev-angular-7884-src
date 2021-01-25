@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import {Component, Inject} from '@angular/core';
 import {AuthService} from '@auth0/auth0-angular';
-import jwt_decode from "jwt-decode";
+import jwt_decode from 'jwt-decode';
 import {RedirectLoginOptions} from '@auth0/auth0-spa-js';
+import {DOCUMENT} from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,10 @@ export class AppComponent {
   accessTokenDecoded: any;
   redirectLoginOptions: RedirectLoginOptions;
 
-  constructor(public authService: AuthService) {
+  constructor(
+    public authService: AuthService,
+    @Inject(DOCUMENT)
+    private doc: Document) {
     this.authService.user$.subscribe(user => {
       console.log(user);
     });
@@ -28,6 +32,12 @@ export class AppComponent {
     console.log('the path is: ', thePath);
 
     this.authService.loginWithRedirect();
+  }
+
+  logout(): any {
+    this.authService.logout({
+      returnTo: this.doc.location.origin + this.doc.location.pathname
+    });
   }
 
   async getAccessToken() {
