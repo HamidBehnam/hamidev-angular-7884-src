@@ -6,7 +6,7 @@ export const environment = {
     domain,
     clientId,
     audience,
-    redirectUri: window.location.origin,
+    redirectUri: window.location.origin + window.location.pathname,
   },
   httpInterceptor: {
     allowedList: [`${apiUri}/*`],
