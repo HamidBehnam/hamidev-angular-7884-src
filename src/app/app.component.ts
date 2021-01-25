@@ -27,12 +27,7 @@ export class AppComponent {
 
     console.log('the path is: ', thePath);
 
-    this.authService.loginWithRedirect({
-      redirect_uri: window.location.origin + window.location.pathname,
-      appState: {
-        target: thePath
-      }
-    });
+    this.authService.loginWithRedirect();
   }
 
   async getAccessToken() {
