@@ -21,9 +21,7 @@ export class NavBarComponent implements OnInit {
   ngOnInit() {}
 
   loginWithRedirect() {
-    this.auth.loginWithRedirect({
-      redirect_uri: this.doc.location.origin + this.doc.location.pathname
-    });
+    this.auth.loginWithRedirect();
   }
 
   logout() {
