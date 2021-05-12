@@ -8,8 +8,13 @@ import {environment} from "../environments/environment";
 const urlSearchParams = new URLSearchParams(window.location.search);
 let appName = urlSearchParams.get('appName');
 
+if (appName) {
+  window.localStorage.setItem('appName', appName);
+}
+
 if (!appName) {
-  urlSearchParams.set('appName', 'hamidev-nodejs-8324-src');
+  const restoredAppName = window.localStorage.getItem('appName');
+  urlSearchParams.set('appName', restoredAppName || 'hamidev-nodejs-8324-src');
   const newRelativePathQuery = window.location.pathname + '?' + urlSearchParams.toString();
   history.pushState(null, '', newRelativePathQuery);
 }
